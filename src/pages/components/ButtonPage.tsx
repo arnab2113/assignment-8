@@ -1,3 +1,4 @@
+// import CodeBlock from "@/components/Personal/CodeBlock";
 import { Button } from "@/components/Button/Button";
 import ComponentDemo from "../ComponentsDemo";
 import PropsTable from "@/components/Personal/PropsTable";
@@ -41,16 +42,18 @@ import { Button } from "@/components/Button/Button"
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-12">
       <header className="space-y-2">
-        <p className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <p
+          className="text-4xl font-bold tracking-tight text-gray-900 dark:text-zinc-100"
+        >
           Button
         </p>
-        <p className="text-lg text-gray-600 dark:text-slate-400">
+        <p className="text-lg text-gray-600 dark:text-zinc-400">
           Displays a button or a component that looks like a button.
         </p>
       </header>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Usage</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">Usage</h2>
         <ComponentDemo code={basicUsageCode}>
           <div className="flex gap-4 flex-wrap">
             <Button
@@ -90,7 +93,7 @@ import { Button } from "@/components/Button/Button"
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">API Reference</h2>
+        <h2 className="text-2xl font-semibold">API Reference</h2>
         <PropsTable data={propsData} />
       </section>
     </div>

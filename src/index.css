@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@variant dark (.dark &);
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
 
 :root {
   --bg-color: #ffffff;
@@ -12,7 +12,7 @@
   --border-color: #e2e8f0;
 }
 
-.dark {
+[data-theme="dark"], .dark {
   --bg-color: #09090b;
   --text-color: #f4f4f5;
   --primary-color: #3b82f6;

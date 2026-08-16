@@ -9,11 +9,12 @@ const initialState: ThemeState = {
 };
 
 const updateDOMTheme = (mode: "light" | "dark") => {
-  document.documentElement.setAttribute("data-theme", mode);
   if (mode === "dark") {
     document.documentElement.classList.add("dark");
+    document.documentElement.setAttribute("data-theme", "dark");
   } else {
     document.documentElement.classList.remove("dark");
+    document.documentElement.removeAttribute("data-theme");
   }
 };
 

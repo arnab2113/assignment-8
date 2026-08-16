@@ -6,14 +6,23 @@ interface ComponentDemoProps {
   children?: React.ReactNode;
   code: string;
   showCode?: boolean;
+  overflowVisible?: boolean;
 }
 
-const ComponentDemo = ({ children, code }: ComponentDemoProps) => {
+const ComponentDemo = ({
+  children,
+  code,
+  overflowVisible = false,
+}: ComponentDemoProps) => {
   const [isCodeVisible, setIsCodeVisible] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm bg-gray-200">
-      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-gray-50">
+    <div
+      className={`border border-gray-200 rounded-lg shadow-sm bg-gray-200 ${
+        overflowVisible ? "overflow-visible" : "overflow-hidden"
+      }`}
+    >
+      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-gray-50 rounded-t-lg">
         <span className="text-sm font-medium text-gray-700">Preview</span>
         <button
           onClick={() => setIsCodeVisible(!isCodeVisible)}
@@ -24,10 +33,12 @@ const ComponentDemo = ({ children, code }: ComponentDemoProps) => {
         </button>
       </div>
 
-      <div className="py-20 px-4 flex items-center justify-center">{children}</div>
+      <div className="py-20 px-4 flex items-center justify-center relative">
+        {children}
+      </div>
 
       {isCodeVisible && (
-        <div className="border-t border-gray-200">
+        <div className="border-t border-gray-200 rounded-b-lg overflow-hidden">
           <CodeBlock code={code} />
         </div>
       )}

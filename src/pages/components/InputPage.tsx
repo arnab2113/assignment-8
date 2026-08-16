@@ -1,4 +1,4 @@
-import ComponentDemo from "@/pages/ComponentsDemo"; // your reusable ComponentDemo
+import ComponentDemo from "@/pages/ComponentsDemo";
 import PropsTable from "@/components/Personal/PropsTable";
 import { Input } from "@/components";
 import { PasswordInput } from "@/components/Input/PasswordInput";
@@ -53,18 +53,17 @@ const InputPage = () => {
   return (
     <div className="max-w-4xl mx-auto p-4 space-y-12">
       <div className="space-y-2">
-        <h1 className="text-4xl font-bold tracking-tight">Input</h1>
-        <p className="text-gray-600 text-lg">
-          Input component for user forms with standard styling and easy
-          customization.
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Input</h1>
+        <p className="text-gray-600 dark:text-slate-400 text-lg">
+          Input component for user forms with standard styling and easy customization.
         </p>
       </div>
 
       <section className="space-y-4 flex flex-col gap-10">
-        <h2 className="text-2xl font-semibold">Examples</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Examples</h2>
 
         <div className="space-y-2">
-          <h3 className="text-lg font-medium">Normal</h3>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-slate-200">Normal</h3>
           <ComponentDemo code={variantsCode}>
             <div className="flex flex-col gap-4">
               <Input
@@ -76,14 +75,12 @@ const InputPage = () => {
                 label="Email"
                 type="email"
                 placeholder="Enter your email"
-                // variant="success"
                 size="md"
               />
               <Input
                 label="Email"
                 type="email"
                 placeholder="Enter your email"
-                // variant="success"
                 size="lg"
               />
             </div>
@@ -91,7 +88,7 @@ const InputPage = () => {
         </div>
 
         <div className="space-y-2">
-          <h3 className="text-lg font-medium">Password Type</h3>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-slate-200">Password & Advanced Types</h3>
           <ComponentDemo code={sizesCode}>
             <div className="flex flex-col gap-4">
               <AnimatedInput label="Animated" placeholder="Focus me" />
@@ -105,7 +102,7 @@ const InputPage = () => {
       </section>
 
       <section className="space-y-2">
-        <h2 className="text-2xl font-semibold">API Reference</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">API Reference</h2>
         <PropsTable data={propsData} />
       </section>
     </div>

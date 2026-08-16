@@ -75,29 +75,25 @@ const CardPage = () => {
       prop: "variant",
       type: `"light" | "dark" | "outline"`,
       default: `"light"`,
-      description:
-        "Defines the visual style of the card background and border.",
+      description: "Defines the visual style of the card background and border.",
     },
     {
       prop: "hoverAnimation",
       type: `"none" | "jiggle" | "scale" | "shadowPulse" | "float3D" | "wobbleFollow"`,
       default: `"none"`,
-      description:
-        "Specifies the GSAP-powered hover animation for interactive motion effects.",
+      description: "Specifies the GSAP-powered hover animation for interactive motion effects.",
     },
     {
       prop: "animate",
       type: "boolean",
       default: "false",
-      description:
-        "When true, the card will apply an entrance animation defined by `animationType`.",
+      description: "When true, the card will apply an entrance animation defined by `animationType`.",
     },
     {
       prop: "animationType",
       type: `"fadeIn" | "slideUp" | "zoomIn" | ... (from entranceAnimations)"`,
       default: `"fadeIn"`,
-      description:
-        "Specifies which entrance animation to use when card mounts.",
+      description: "Specifies which entrance animation to use when card mounts.",
     },
     {
       prop: "title",
@@ -115,8 +111,7 @@ const CardPage = () => {
       prop: "image",
       type: "string",
       default: "-",
-      description:
-        "URL of an image displayed at the top of the card with aspect ratio control.",
+      description: "URL of an image displayed at the top of the card with aspect ratio control.",
     },
     {
       prop: "ratio",
@@ -128,22 +123,19 @@ const CardPage = () => {
       prop: "size",
       type: `"sm" | "md" | "lg"`,
       default: `"md"`,
-      description:
-        "Controls the internal padding and text size of the card content.",
+      description: "Controls the internal padding and text size of the card content.",
     },
     {
       prop: "footer",
       type: "React.ReactNode",
       default: "-",
-      description:
-        "Optional footer content (e.g., buttons or links) rendered at the bottom of the card.",
+      description: "Optional footer content rendered at the bottom of the card.",
     },
     {
       prop: "asChild",
       type: "boolean",
       default: "false",
-      description:
-        "If true, allows you to render the Card as a different HTML element using Radix Slot.",
+      description: "If true, allows rendering the Card as a different HTML element using Radix Slot.",
     },
     {
       prop: "className",
@@ -156,15 +148,14 @@ const CardPage = () => {
   return (
     <div className="max-w-4xl mx-auto p-4 space-y-12">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Card</h1>
-        <p className="text-xl text-gray-600">
-          The Card component is a container for grouping content with a border
-          and padding.
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Card</h1>
+        <p className="text-xl text-gray-600 dark:text-slate-400">
+          The Card component is a container for grouping content with a border and padding.
         </p>
       </div>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Usage</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Usage</h2>
         <div className="flex flex-col gap-20">
           <ComponentDemo code={darkCard}>
             <div className="w-100">
@@ -213,7 +204,7 @@ const CardPage = () => {
             </div>
           </ComponentDemo>
           <div className="flex flex-col gap-10">
-            <h1 className="text-2xl font-bold">Animated Card</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Animated Card</h1>
             <ComponentDemo code={animatedCard}>
               <div className="w-100">
                 <Card
@@ -266,7 +257,7 @@ const CardPage = () => {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">API Reference</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">API Reference</h2>
         <PropsTable data={propsData} />
       </section>
     </div>

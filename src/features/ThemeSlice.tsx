@@ -8,6 +8,15 @@ const initialState: ThemeState = {
   mode: "light",
 };
 
+const updateDOMTheme = (mode: "light" | "dark") => {
+  document.documentElement.setAttribute("data-theme", mode);
+  if (mode === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+};
+
 const themeSlice = createSlice({
   name: "theme",
   initialState,
@@ -15,11 +24,11 @@ const themeSlice = createSlice({
     toggleTheme: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
       localStorage.setItem("theme", state.mode);
-      document.documentElement.setAttribute("data-theme", state.mode);
+      updateDOMTheme(state.mode);
     },
     setTheme: (state, action) => {
       state.mode = action.payload;
-      document.documentElement.setAttribute("data-theme", action.payload);
+      updateDOMTheme(action.payload);
     },
   },
 });

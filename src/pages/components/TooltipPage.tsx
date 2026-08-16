@@ -42,14 +42,14 @@ const TooltipPage = () => {
     <div className="flex items-center gap-2 p-1">
       <button 
         onClick={() => setLiked(!liked)} 
-        className="px-2 py-1 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 rounded text-xs font-semibold flex items-center gap-1"
+        className="px-2 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded text-xs font-semibold flex items-center gap-1"
       >
         <Heart size={14} fill={liked ? "currentColor" : "none"} />
         {liked ? "Liked!" : "Like"}
       </button>
       <button 
         onClick={() => alert("Shared!")} 
-        className="px-2 py-1 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-700 dark:text-zinc-200 rounded text-xs font-semibold flex items-center gap-1"
+        className="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded text-xs font-semibold flex items-center gap-1"
       >
         <Share2 size={14} /> Share
       </button>
@@ -139,26 +139,29 @@ const TooltipPage = () => {
     <div className="max-w-4xl mx-auto p-6 space-y-12">
       {/* Header */}
       <header className="space-y-2">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-zinc-100">
+        <h1
+          className="text-4xl font-bold tracking-tight"
+          style={{ color: "var(--text-color, #0f172a)" }}
+        >
           Tooltip
         </h1>
-        <p className="text-lg text-gray-600 dark:text-zinc-400">
+        <p className="text-lg text-gray-600">
           A customizable popover component that displays informative, interactive content when hovering, clicking, or focusing an element.
         </p>
       </header>
 
       {/* Interactive Playground / Control Panel */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">Interactive Playground</h2>
-        <div className="p-4 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-lg shadow-sm space-y-4 transition-colors">
+        <h2 className="text-2xl font-semibold">Interactive Playground</h2>
+        <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm space-y-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             {/* Position picker */}
             <div>
-              <label className="block text-xs font-semibold text-gray-500 dark:text-zinc-400 mb-1">Position</label>
+              <label className="block text-xs font-semibold text-gray-500 mb-1">Position</label>
               <select
                 value={position}
                 onChange={(e) => setPosition(e.target.value as any)}
-                className="w-full p-2 border border-gray-300 dark:border-zinc-700 rounded-md text-sm bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+                className="w-full p-2 border border-gray-300 rounded-md text-sm bg-white"
               >
                 <option value="top">Top</option>
                 <option value="bottom">Bottom</option>
@@ -169,11 +172,11 @@ const TooltipPage = () => {
 
             {/* Variant picker */}
             <div>
-              <label className="block text-xs font-semibold text-gray-500 dark:text-zinc-400 mb-1">Variant</label>
+              <label className="block text-xs font-semibold text-gray-500 mb-1">Variant</label>
               <select
                 value={variant}
                 onChange={(e) => setVariant(e.target.value as any)}
-                className="w-full p-2 border border-gray-300 dark:border-zinc-700 rounded-md text-sm bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+                className="w-full p-2 border border-gray-300 rounded-md text-sm bg-white"
               >
                 <option value="dark">Dark</option>
                 <option value="light">Light</option>
@@ -185,11 +188,11 @@ const TooltipPage = () => {
 
             {/* Trigger picker */}
             <div>
-              <label className="block text-xs font-semibold text-gray-500 dark:text-zinc-400 mb-1">Trigger</label>
+              <label className="block text-xs font-semibold text-gray-500 mb-1">Trigger</label>
               <select
                 value={trigger}
                 onChange={(e) => setTrigger(e.target.value as any)}
-                className="w-full p-2 border border-gray-300 dark:border-zinc-700 rounded-md text-sm bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+                className="w-full p-2 border border-gray-300 rounded-md text-sm bg-white"
               >
                 <option value="hover">Hover</option>
                 <option value="click">Click</option>
@@ -199,30 +202,30 @@ const TooltipPage = () => {
 
             {/* Options Toggles */}
             <div className="flex flex-col justify-end space-y-1">
-              <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-gray-700 dark:text-zinc-300">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-gray-700">
                 <input
                   type="checkbox"
                   checked={showArrow}
                   onChange={(e) => setShowArrow(e.target.checked)}
-                  className="rounded border-gray-300 dark:border-zinc-700 text-indigo-600 focus:ring-indigo-500"
+                  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 Show Arrow
               </label>
-              <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-gray-700 dark:text-zinc-300">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-gray-700">
                 <input
                   type="checkbox"
                   checked={interactive}
                   onChange={(e) => setInteractive(e.target.checked)}
-                  className="rounded border-gray-300 dark:border-zinc-700 text-indigo-600 focus:ring-indigo-500"
+                  className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 Interactive Content
               </label>
-              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-indigo-700 font-semibold">
                 <input
                   type="checkbox"
                   checked={forceOpen}
                   onChange={(e) => setForceOpen(e.target.checked)}
-                  className="rounded border-indigo-300 dark:border-indigo-700 text-indigo-600 focus:ring-indigo-500"
+                  className="rounded border-indigo-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 Keep Open Preview
               </label>
@@ -246,7 +249,7 @@ const TooltipPage = () => {
                     <span>Interactive Tooltip!</span>
                     <button
                       onClick={() => setActionLog("Clicked button inside Playground Tooltip!")}
-                      className="px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded text-xs font-bold"
+                      className="px-2 py-0.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded text-xs font-bold"
                     >
                       Click Me
                     </button>
@@ -270,8 +273,8 @@ const TooltipPage = () => {
 
       {/* Fully Functional & Clickable Tooltip Options Showcase */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">Fully Functional Clickable Tooltip Options</h2>
-        <p className="text-gray-600 dark:text-zinc-400">
+        <h2 className="text-2xl font-semibold">Fully Functional Clickable Tooltip Options</h2>
+        <p className="text-gray-600">
           Tooltips can contain fully functional interactive elements, dropdown action buttons, and control options that respond to user clicks in real time.
         </p>
 
@@ -385,9 +388,9 @@ const TooltipPage = () => {
             </div>
 
             {/* Live Action Log Box */}
-            <div className="w-full p-3 bg-gray-100 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 rounded-md text-xs font-mono text-gray-700 dark:text-zinc-300 flex items-center justify-between transition-colors">
+            <div className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md text-xs font-mono text-gray-700 flex items-center justify-between">
               <span>Status Output:</span>
-              <span className="font-semibold text-indigo-600 dark:text-indigo-400">{actionLog}</span>
+              <span className="font-semibold text-indigo-600">{actionLog}</span>
             </div>
           </div>
         </ComponentDemo>
@@ -395,8 +398,8 @@ const TooltipPage = () => {
 
       {/* Placement Positions */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">Positions</h2>
-        <p className="text-gray-600 dark:text-zinc-400">
+        <h2 className="text-2xl font-semibold">Positions</h2>
+        <p className="text-gray-600">
           Tooltips can be positioned on top, bottom, left, or right of the target component.
         </p>
 
@@ -420,7 +423,7 @@ const TooltipPage = () => {
 
       {/* Visual Variants */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">Visual Variants</h2>
+        <h2 className="text-2xl font-semibold">Visual Variants</h2>
         <ComponentDemo
           overflowVisible={true}
           code={`<Tooltip variant="dark" content="Dark theme">...</Tooltip>
@@ -434,7 +437,7 @@ const TooltipPage = () => {
               <Button variant="dark" size="sm">Dark</Button>
             </Tooltip>
             <Tooltip forceOpen={true} variant="light" content="Light Theme Tooltip">
-              <Button variant="ghost" size="sm" className="border border-gray-300 dark:border-zinc-700">Light</Button>
+              <Button variant="ghost" size="sm" className="border border-gray-300">Light</Button>
             </Tooltip>
             <Tooltip forceOpen={true} variant="primary" content="Primary Indigo Theme">
               <Button variant="primary" size="sm">Primary</Button>
@@ -451,7 +454,7 @@ const TooltipPage = () => {
 
       {/* API Reference */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">API Reference</h2>
+        <h2 className="text-2xl font-semibold">API Reference</h2>
         <PropsTable data={propsData} />
       </section>
     </div>

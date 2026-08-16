@@ -18,17 +18,15 @@ const ComponentDemo = ({
 
   return (
     <div
-      className={`border border-gray-200 dark:border-zinc-800 rounded-lg shadow-sm bg-gray-100 dark:bg-zinc-900 transition-colors ${
+      className={`border border-gray-200 rounded-lg shadow-sm bg-gray-200 ${
         overflowVisible ? "overflow-visible" : "overflow-hidden"
       }`}
     >
-      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-950 rounded-t-lg transition-colors">
-        <span className="text-sm font-medium text-gray-700 dark:text-zinc-300">
-          Preview
-        </span>
+      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-gray-50 rounded-t-lg">
+        <span className="text-sm font-medium text-gray-700">Preview</span>
         <button
           onClick={() => setIsCodeVisible(!isCodeVisible)}
-          className="flex items-center gap-1 px-3 py-1 text-sm bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-700 dark:text-zinc-200 rounded transition-colors cursor-pointer"
+          className="flex items-center gap-1 px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded transition-colors"
         >
           <Code size={14} />
           {isCodeVisible ? "Hide Code" : "View Code"}
@@ -40,7 +38,7 @@ const ComponentDemo = ({
       </div>
 
       {isCodeVisible && (
-        <div className="border-t border-gray-200 dark:border-zinc-800 rounded-b-lg overflow-hidden">
+        <div className="border-t border-gray-200 rounded-b-lg overflow-hidden">
           <CodeBlock code={code} />
         </div>
       )}
